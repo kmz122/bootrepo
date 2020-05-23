@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            JS Calculator
+        </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <script type = "text/javascript">
+
+            // Have to watch out of the indention of the function 
+            // or sometimes error may occurs.
+            function cal_interest(){
+
+                var p = 0; // principal
+                var n = 0; // number of years
+                var r = 0; // rate of interest
+                var si = 0; // sample interest
+
+                p = parseInt(document.getElementById("principal").value);
+                n = parseInt(document.getElementById("years").value);
+                r = parseInt(document.getElementById("rate").value);
+
+                
+                si = (p * n * r) / 100;
+                document.getElementById("result").innerHTML = si;
+
+            }
+
+        </script>
+    </head>
+    
+    <body>
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-md-12">
+                    <h1> Simple Intrest Calculator </h1>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-group"> Principal </label>
+                            <input class="form-control" type="text" id="principal">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group"> Years </label>
+                            <input class="form-control" type="text" id="years">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group"> Rate of interest </label>
+                            <input class="form-control" type="text" id="rate">
+                        </div>
+
+                        <button class="btn btn-primary" type="button" onClick="cal_interest()"> Calculate </button>
+                    </form>    
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h1 id="result"> $ </h1>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
